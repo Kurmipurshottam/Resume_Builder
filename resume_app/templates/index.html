@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            width: 60%;
+            margin: 40px auto;
+            padding: 30px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #555;
+            transition: border 0.3s ease;
+            background-color: #f9f9f9;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group textarea:focus {
+            border-color: #00aaff;
+            outline: none;
+            background-color: #ffffff;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .form-group .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-group .input-group input {
+            flex: 1;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #00aaff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #0088cc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #00aaff;
+            font-size: 36px;
+            margin-top: 20px;
+            font-weight: 300;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #00aaff;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Resume Builder</h1>
+
+    <form action="{% url 'resume' %}" method="post">
+        {% csrf_token %}
+
+        <div class="form-container">
+            <h2>Personal Information</h2>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="about">About:</label>
+                <textarea id="about" name="about"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="skills">Skills:</label>
+                <div class="input-group">
+                    <input type="text" id="skills" name="skill1" placeholder="Skill 1">
+                    <input type="text" id="skills" name="skill2" placeholder="Skill 2">
+                    <input type="text" id="skills" name="skill3" placeholder="Skill 3">
+                    <input type="text" id="skills" name="skill4" placeholder="Skill 4">
+                    <input type="text" id="skills" name="skill5" placeholder="Skill 5">
+                </div>
+            </div>
+
+            <h2>Education</h2>
+            <div class="form-group">
+                <label for="education1">Education 1:</label>
+                <div class="input-group">
+                    <input type="text" id="degree1" name="degree1" placeholder="Degree">
+                    <input type="text" id="college1" name="college1" placeholder="College">
+                    <input type="text" id="year1" name="year1" placeholder="Year">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="education2">Education 2:</label>
+                <div class="input-group">
+                    <input type="text" id="degree2" name="degree2" placeholder="Degree">
+                    <input type="text" id="college2" name="college2" placeholder="College">
+                    <input type="text" id="year2" name="year2" placeholder="Year">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="education3">Education 3:</label>
+                <div class="input-group">
+                    <input type="text" id="degree3" name="degree3" placeholder="Degree">
+                    <input type="text" id="college3" name="college3" placeholder="College">
+                    <input type="text" id="year3" name="year3" placeholder="Year">
+                </div>
+            </div>
+
+            <h2>Languages</h2>
+            <div class="form-group">
+                <label for="languages">Languages:</label>
+                <div class="input-group">
+                    <input type="text" id="lang1" name="lang1" placeholder="Language 1">
+                    <input type="text" id="lang2" name="lang2" placeholder="Language 2">
+                    <input type="text" id="lang3" name="lang3" placeholder="Language 3">
+                </div>
+            </div>
+
+            <h2>Projects</h2>
+            <div class="form-group">
+                <label for="project1">Project 1:</label>
+                <div class="input-group">
+                    <input type="text" id="project1" name="project1" placeholder="Project Title">
+                    <input type="text" id="durat1" name="durat1" placeholder="Duration">
+                </div>
+                <textarea id="desc1" name="desc1" placeholder="Description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="project2">Project 2:</label>
+                <div class="input-group">
+                    <input type="text" id="project2" name="project2" placeholder="Project Title">
+                    <input type="text" id="durat2" name="durat2" placeholder="Duration">
+                </div>
+                <textarea id="desc2" name="desc2" placeholder="Description"></textarea>
+            </div>
+
+            <h2>Experience</h2>
+            <div class="form-group">
+                <label for="experience1">Experience 1:</label>
+                <div class="input-group">
+                    <input type="text" id="company1" name="company1" placeholder="Company Name">
+                    <input type="text" id="post1" name="post1" placeholder="Post">
+                    <input type="text" id="duration1" name="duration1" placeholder="Duration">
+                </div>
+                <textarea id="lin11" name="lin11" placeholder="Description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="experience2">Experience 2:</label>
+                <div class="input-group">
+                    <input type="text" id="company2" name="company2" placeholder="Company Name">
+                    <input type="text" id="post2" name="post2" placeholder="Post">
+                    <input type="text" id="duration2" name="duration2" placeholder="Duration">
+                </div>
+                <textarea id="lin21" name="lin21" placeholder="Description"></textarea>
+            </div>
+
+            <h2>Achievements</h2>
+            <div class="form-group">
+                <label for="ach1">First Achievement:</label>
+                <input type="text" id="ach1" name="ach1" placeholder="Achievement 1">
+            </div>
+            <div class="form-group">
+                <label for="ach2">Second Achievement:</label>
+                <input type="text" id="ach2" name="ach2" placeholder="Achievement 2">
+            </div>
+            <div class="form-group">
+                <label for="ach3">Third Achievement:</label>
+                <input type="text" id="ach3" name="ach3" placeholder="Achievement 3">
+            </div>
+
+            <button type="submit" class="btn-submit">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>

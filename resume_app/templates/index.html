@@ -238,3 +238,184 @@
 </body>
 
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brilliant Earth - My Account</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #001f3f;
+    }
+
+    header {
+      padding: 1rem 2rem;
+      background-color: #97cfec;
+      color: #001f3f;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      padding: 3rem 2rem;
+    }
+
+    .form-box {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2, h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      color: #001f3f;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.7rem;
+      background-color: #97cfec;
+      color: #001f3f;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #6cc0ec;
+    }
+
+    .divider {
+      text-align: center;
+      margin: 2rem 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .google-signin {
+      background-color: white;
+      border: 2px solid #97cfec;
+      color: #001f3f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .google-signin img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .google-signin:hover {
+      background-color: #6cc0ec;
+      border-color: #6cc0ec;
+    }
+
+    ul {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      padding-left: 1.2rem;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .forgot-link {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      text-align: right;
+    }
+
+    .forgot-link a {
+      color: #001f3f;
+      text-decoration: none;
+    }
+
+    .forgot-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>BRILLIANT EARTH</header>
+
+  <div class="container">
+    <!-- Sign In Section -->
+    <div class="form-box">
+      <h2>My Account</h2>
+      <button class="google-signin">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
+        SIGN IN WITH GOOGLE
+      </button>
+      <div class="divider">or</div>
+
+      <h3>Sign In</h3>
+      <form>
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" placeholder="Password" required>
+        <div class="forgot-link"><a href="#">Forgot your password?</a></div>
+        <button type="submit">SIGN IN</button>
+      </form>
+    </div>
+
+    <!-- Create Account Section -->
+    <div class="form-box">
+      <h3>Create an Account</h3>
+      <p>Enjoy the benefits of a Brilliant Earth account:</p>
+      <ul>
+        <li>Save items to Wish List and Shopping Cart</li>
+        <li>Request a ring resize online</li>
+        <li>Faster check out</li>
+        <li>Exclusive offers</li>
+        <li>View Order History</li>
+      </ul>
+      <form>
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+        <div class="checkbox">
+          <input type="checkbox" id="newsletter">
+          <label for="newsletter">Email me Brilliant Earth news, updates and offers.</label>
+        </div>
+        <button type="submit">CREATE ACCOUNT</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
+
